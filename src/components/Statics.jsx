@@ -1,8 +1,23 @@
 "use client"
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import {
+  airplaneOutline, walkOutline, peopleOutline, bulbOutline, buildOutline,
+  personOutline, playOutline, pauseOutline, pause
+} from 'ionicons/icons';
+import { IonIcon } from '@ionic/react';
+
+const data = [
+  { id: 1, count: "2.7K", text: "Peregrinaciones", icon: airplaneOutline, icon2: walkOutline },
+  { id: 2, count: "3.5K", text: "Social", icon: peopleOutline, icon2: personOutline },
+  { id: 3, count: "1.2K", text: "Comunicación", icon: playOutline, icon2: pauseOutline },
+  { id: 4, count: "3.5K", text: "Proyectos", icon: bulbOutline, icon2: buildOutline },
+  // Add more objects with different data for each div
+];
 
 const Statics = () => {
-  const [hoverStates, setHoverStates] = useState([false, false, false, false]);
+  const [hoverStates, setHoverStates] = useState([]);
+  const [icon, setIcon] = useState([]);
+
 
   const handleMouseEnter = (index) => {
     setHoverStates((prevStates) => {
@@ -20,12 +35,39 @@ const Statics = () => {
     });
   };
 
+  const handleIcon = (index) => {
+    setIcon((prevStates) => {
+      const newStates = [...prevStates];
+      newStates[index] = !newStates[index]; // Cambiar el valor booleano del ícono en el índice seleccionado
+      return newStates;
+    });
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const element = document.getElementById("statics");
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        const isVisible = rect.left < window.innerWidth; // El componente está dentro de la ventana
+        if (isVisible) {
+          element.classList.add("slideIn"); // Agregar la clase de animación CSS
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+
   return (
-    <section className="text-gray-600 body-font">
+    <section className="text-gray-600 body-font transition-transform duration-300 p-4" id="statics">
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-col text-center w-full mb-20">
           <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
-            Areas Anunciar
+            Asociación Civil Anunciar
           </h1>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
             Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway
@@ -34,9 +76,9 @@ const Statics = () => {
           </p>
         </div>
         <div className="flex flex-wrap -m-4 text-center">
-          {hoverStates.map((isHovered, index) => (
+          {data.map((item, index) => (
             <div
-              key={index}
+              key={item.id}
               className="p-4 md:w-1/4 sm:w-1/2 w-full"
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={() => handleMouseLeave(index)}
@@ -44,33 +86,22 @@ const Statics = () => {
               <div
                 className={`border-2 border-gray-200 px-4 py-6 rounded-lg`}
               >
-                <svg
-                  fill="none"
-                  className={`text-indigo-500 w-12 h-12 mb-3 inline-block ${
-                    isHovered ? "transform -translate-y-2 transition-transform duration-300" : "transform transition-transform duration-300"
-                  }`}
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M8 17l4 4 4-4m-4-5v9"></path>
-                  <path d="M20.88 18.09A5 5 0 0018 9h-1.26A8 8 0 103 16.29"></path>
-                </svg>
+                <IonIcon
+                  onClick={() => handleIcon(index)}
+                  icon={icon[index] ? item.icon2 : item.icon} // Asigna el ícono específico que deseas mostrar
+                  className={`text-indigo-500 w-12 h-12 mb-3 cursor-pointer inline-block ${hoverStates[index] ? "transform -translate-y-2 transition-transform duration-300" : "transform transition-transform duration-300"
+                    }`} />
                 <h2
-                  className={`title-font font-medium text-3xl text-gray-900 ${
-                    isHovered ? "transform scale-150 transition-transform duration-300" : "transform transition-transform duration-300"
-                  }`}
+                  className={`title-font font-medium text-3xl text-gray-900 w-full ${hoverStates[index] ? "transform scale-150 transition-transform duration-300" : "transform transition-transform duration-300"
+                    }`}
                 >
-                  2.7K
+                  {item.count}
                 </h2>
                 <p
-                  className={`leading-relaxed ${
-                    isHovered ? "transform translate-y-2 transition-transform duration-300" : "transform transition-transform duration-300"
-                  }`}
+                  className={`leading-relaxed ${hoverStates[index] ? "transform translate-y-2 transition-transform duration-300" : "transform transition-transform duration-300"
+                    }`}
                 >
-                  Religio
+                  {item.text}
                 </p>
               </div>
             </div>
