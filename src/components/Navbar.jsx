@@ -1,19 +1,16 @@
 "use client"
-import { useState, useEffect, useContext } from "react";
-import { menuOutline, moonOutline, sunnyOutline } from 'ionicons/icons';
-import { IonIcon } from '@ionic/react';
+import { useState, useEffect, useRef, useContext } from "react";
+import { menuOutline } from "ionicons/icons";
+import { IonIcon } from "@ionic/react";
 import Image from "next/image";
-import { GlobalContext } from "@/app/contexts/context";
+import { GlobalContext } from "../app/contexts/context";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [dark, setDark] = useState(false);
-  const [animateIn, setAnimateIn] = useState(false);
-
   const { globalState, setGlobalState } = useContext(GlobalContext);
+  const { dropdown, navBarHeight } = globalState;
 
-  // Obtén dropdown del globalState
-  const dropdown = globalState.dropdown;
+  const navbarRef = useRef(null);
 
   // Función para cambiar el valor de dropdown
   const handleDropdown = () => {
@@ -22,18 +19,16 @@ const Navbar = () => {
       dropdown: !dropdown,
     }));
   };
-
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 0.1);
+      setScrolled(window.scrollY > 100);
     };
 
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+}}, []);
 
   const toggleDropdown = () => {
     if (dropdown) {
@@ -56,8 +51,9 @@ const Navbar = () => {
   return (
     <>
       <nav
+      ref={navbarRef}
         className={`navbar flex items-center justify-between px-12 fixed top-0 left-0 w-full z-40 bg-[#F1F1F1] shadow 
-      transition-all duration-300 ${dropdown || !scrolled  ? "h-[20vh]" : "h-12"}`}
+      transition-all duration-300 ${dropdown || !scrolled ? "h-[20vh]" : "h-14"}`}
       >
         <IonIcon
           onClick={toggleDropdown} // Asegúrate de utilizar la sintaxis de eventos de React
