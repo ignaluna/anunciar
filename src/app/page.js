@@ -18,17 +18,17 @@ export default function Home() {
       justify-center text-white">
         <Statics />
       </div>
-      <div className="sticky top-0 h-screen bg-gradient-to-tr flex flex-col items-center justify-center text-white">
+      <div id="jaire" className="sticky top-0 h-screen bg-gradient-to-tr flex flex-col items-center justify-center text-white">
         <Jaire />
       </div>
-      <div className="sticky top-0 h-screen bg-[#F1F1F1] flex flex-col items-center justify-center text-white">
+      <div id="comunicacion" className="sticky top-0 h-screen bg-[#F1F1F1] flex flex-col items-center justify-center text-white">
         <Comunicación/>
       </div>
-      <div className="sticky top-0 md:top-12 h-screen flex flex-col 
+      <div id="religio" className="sticky top-0 md:top-12 h-screen flex flex-col 
       items-center justify-center bg-[#F1F1F1] text-white">
         <Religio />
       </div>
-      <div className="sticky top-0 h-screen flex flex-col items-center justify-center bg-[#F1F1F1]">
+      <div id="accordion" className="sticky top-0 h-screen flex flex-col items-center justify-center bg-[#F1F1F1]">
         <Accordion></Accordion>
         <div className="absolute bottom-0 w-full">
           <Footer />

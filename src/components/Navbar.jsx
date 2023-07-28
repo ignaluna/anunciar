@@ -4,12 +4,13 @@ import { menuOutline } from "ionicons/icons";
 import { IonIcon } from "@ionic/react";
 import Image from "next/image";
 import { GlobalContext } from "../app/contexts/context";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const { globalState, setGlobalState } = useContext(GlobalContext);
   const { dropdown, navBarHeight } = globalState;
-
+  const [animateIn, setAnimateIn] = useState(false)
   const navbarRef = useRef(null);
 
   // Función para cambiar el valor de dropdown
@@ -28,21 +29,17 @@ const Navbar = () => {
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-}}, []);
+    }
+  }, []);
 
-  const toggleDropdown = () => {
+  const toggleDropdown = (to) => {
     if (dropdown) {
-      // Si el dropdown está visible y hacemos clic para cerrarlo
-      // Primero animamos hacia afuera y luego ocultamos el dropdown
+      // Si el menú desplegable está abierto, lo cerramos antes de cambiar de sección
       setAnimateIn(false);
-
-      // Añadimos un pequeño retraso para permitir que la animación ocurra antes de ocultar el dropdown
       setTimeout(() => {
         handleDropdown(false);
       }, 400);
     } else {
-      // Si el dropdown está oculto y hacemos clic para mostrarlo
-      // Primero ocultamos el dropdown y luego animamos hacia adentro
       handleDropdown(true);
       setAnimateIn(true);
     }
@@ -51,7 +48,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-      ref={navbarRef}
+        ref={navbarRef}
         className={`navbar flex items-center justify-between px-12 fixed top-0 left-0 w-full z-40 bg-[#F1F1F1] shadow 
       transition-all duration-300 ${dropdown || !scrolled ? "h-[20vh]" : "h-14"}`}
       >
@@ -68,19 +65,59 @@ const Navbar = () => {
             width={150}
           />
         </div>
-        <div class="nav-links duration-500 min-h-fit flex items-center px-5 hidden md:flex">
-          <ul class="hidden md:flex flex-row items-center gap-[4vw]">
+        <div className="nav-links duration-500 min-h-fit flex items-center px-5 hidden md:flex">
+          <ul className="hidden md:flex flex-row items-center gap-[4vw]">
             <li>
-              <a class="hover:text-gray-500" href="#">Social</a>
+              <Link
+                activeClass="active"
+                to="jaire"
+                spy={true}
+                smooth={true}
+                offset={-50}
+                duration={500}
+                className="hover:text-gray-500 cursor-pointer"
+              >
+                Social
+              </Link>
             </li>
             <li>
-              <a class="hover:text-gray-500" href="#">Peregrinaciones</a>
+              <Link
+                activeClass="active"
+                to="religio"
+                spy={true}
+                smooth={true}
+                offset={-50}
+                duration={500}
+                className="hover:text-gray-500 cursor-pointer"
+              >
+                Peregrinaciones
+              </Link>
             </li>
             <li>
-              <a class="hover:text-gray-500" href="#">Comunicación</a>
+              <Link
+                activeClass="active"
+                to="comunicacion"
+                spy={true}
+                smooth={true}
+                offset={-50}
+                duration={500}
+                className="hover:text-gray-500 cursor-pointer"
+              >
+                Comunicación
+              </Link>
             </li>
             <li>
-              <a class="hover:text-gray-500" href="#">Proyectos</a>
+              <Link
+                activeClass="active"
+                to="accordion"
+                spy={true}
+                smooth={true}
+                offset={-50}
+                duration={1000}
+                className="hover:text-gray-500 cursor-pointer"
+              >
+                Proyectos
+              </Link>
             </li>
           </ul>
         </div>
