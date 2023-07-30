@@ -24,7 +24,7 @@ export default function Slider() {
 }}, []);
 
   return (
-    <div className={`h-screen w-full transition-all duration-300 ${scrolled ? "" : "mt-[30vh]"}`}>
+    <div className={`h-screen w-full transition-all duration-300 ${scrolled ? "" : "lg:mt-[30vh]"}`}>
       <Swiper
         slidesPerView={1}
         spaceBetween={30}

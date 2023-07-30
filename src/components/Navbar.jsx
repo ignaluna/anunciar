@@ -1,10 +1,11 @@
 "use client"
 import { useState, useEffect, useRef, useContext } from "react";
-import { menuOutline } from "ionicons/icons";
+import { arrowUpOutline, menuOutline } from "ionicons/icons";
 import { IonIcon } from "@ionic/react";
 import Image from "next/image";
 import { GlobalContext } from "../app/contexts/context";
-import { Link } from "react-scroll";
+import Link from "next/link";
+import { Link as LinkScroll } from "react-scroll";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -12,6 +13,8 @@ const Navbar = () => {
   const { dropdown, navBarHeight } = globalState;
   const [animateIn, setAnimateIn] = useState(false)
   const navbarRef = useRef(null);
+  const [top, setTop] = useState(false);
+
 
   // Función para cambiar el valor de dropdown
   const handleDropdown = () => {
@@ -45,6 +48,27 @@ const Navbar = () => {
     }
   };
 
+  const scrollToSection = (sectionId) => {
+    const section = document.querySelector(sectionId);
+    const sectionPosition = section.getBoundingClientRect().top;
+    const offset = 50;
+
+    const scrollDirection = sectionPosition < 100 ? 'up' : 'down';
+
+    if (scrollDirection === 'up') {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    } else {
+      window.scrollTo({
+        top: sectionPosition + window.scrollY - offset,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+
   return (
     <>
       <nav
@@ -57,68 +81,62 @@ const Navbar = () => {
           icon={menuOutline} // Asigna el ícono específico que deseas mostrar
           className="text-3xl cursor-pointer md:hidden h-lg"
         />
-        <div className={`logo transition-all duration-700 flex items-center ${dropdown || !scrolled ? "scale-150" : "scale-75"}`} id="logo">
+        <Link href="/" className={`logo transition-all duration-700 flex items-center ${dropdown || !scrolled ? "scale-150" : "scale-75"}`} id="logo">
           <Image
             src="https://res.cloudinary.com/dvh8hozns/image/upload/v1688157403/Anunciar/qpi5qareodaxmmehor3u.png"
             alt="Logo"
             height={150}
             width={150}
+
           />
-        </div>
+        </Link>
         <div className="nav-links duration-500 min-h-fit flex items-center px-5 hidden md:flex">
           <ul className="hidden md:flex flex-row items-center gap-[4vw]">
             <li>
-              <Link
-                activeClass="active"
-                to="jaire"
-                spy={true}
-                smooth={true}
-                offset={-50}
-                duration={500}
+              <button
+                onClick={() => {
+                  scrollToSection("#jaire");
+                }
+                }
                 className="hover:text-gray-500 cursor-pointer"
               >
                 Social
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                activeClass="active"
-                to="religio"
-                spy={true}
-                smooth={true}
-                offset={-50}
-                duration={500}
-                className="hover:text-gray-500 cursor-pointer"
-              >
-                Peregrinaciones
-              </Link>
-            </li>
-            <li>
-              <Link
-                activeClass="active"
-                to="comunicacion"
-                spy={true}
-                smooth={true}
-                offset={-50}
-                duration={500}
+              <button
+                onClick={() => {
+                  scrollToSection("#comunicacion");
+                }
+                }
                 className="hover:text-gray-500 cursor-pointer"
               >
                 Comunicación
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                activeClass="active"
-                to="accordion"
-                spy={true}
-                smooth={true}
-                offset={-50}
-                duration={1000}
+              <button
+                onClick={() => {
+                  scrollToSection("#religio");
+                }
+                }
+                className="hover:text-gray-500 cursor-pointer"
+              >
+                Peregrinaciones
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => {
+                  scrollToSection("#accordion");
+                }
+                }
                 className="hover:text-gray-500 cursor-pointer"
               >
                 Proyectos
-              </Link>
+              </button>
             </li>
+
           </ul>
         </div>
         <div className="flex items-center gap-4">
@@ -136,20 +154,45 @@ const Navbar = () => {
       {dropdown && (
         <>
           <div
-            className={`menu bg-[#010718] text-white z-30 fixed top-0 left-0 h-screen w-screen ${animateIn ? "animate-slide-in" : "animate-slide-out"
+            className={`menu bg-[#010718] text-white z-30 fixed mt-[20vh] top-0 left-0 h-screen w-screen ${animateIn ? "animate-slide-in" : "animate-slide-out"
               }`}
           >
             {/* Aquí puedes agregar los enlaces y contenido de la sidebar */}
-            <ul className="my-8">
+            <ul className="my-8 flex flex-col items-center justify-evenly h-[70vh]">
               <li>
-                <a className="block text-lg font-semibold" href="#">Enlace 1</a>
+                <Link
+                  href="/#jaire"
+                  onClick={toggleDropdown}
+                >Social</Link>
               </li>
               <li>
-                <a className="block text-lg font-semibold" href="#">Enlace 2</a>
+                <Link
+                  href="/#comunicacion"
+                  onClick={toggleDropdown}
+                >Comunicación</Link>
+              </li>
+              <li>
+                <Link
+                  onClick={toggleDropdown}
+                  href="/#religio">Peregrinaciones</Link>
+              </li>
+              <li>
+                <Link
+                  onClick={toggleDropdown}
+                  href="/#accordion">Proyectos</Link>
               </li>
             </ul>
           </div>
         </>
+      )}
+      {top && (
+        <Link
+          className="back-to-top bg-black-800 rounded-full w-12 h-12 flex items-center justify-center fixed bottom-8 right-8 cursor-pointer z-index-40"
+          href="/"
+          onClick={() => setTop(false)}
+        >
+          <IonIcon icon={arrowUpOutline} className="text-white" />
+        </Link>
       )}
     </>
   );
