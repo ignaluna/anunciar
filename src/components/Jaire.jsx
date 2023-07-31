@@ -16,7 +16,7 @@ const Jaire = () => {
                         />
                         </div>
                     <p class="mb-8 leading-relaxed">
-                        Nuestra misión es la promoción humana y social de niñ@s, adolescentes y jóvenes. "Jaire" significa "Alégrate". Frente a la realidad de vulnerabilidad social
+                        Nuestra misión es la promoción humana y social de niñ@s, adolescentes y jóvenes. Jaire significa Alégrate. Frente a la realidad de vulnerabilidad social
                         del sector, Jaire intenta ser un espacio de encuentro y alegría desde la educación, cultura, recreación y deporte. Talleres gratuitos semanales
                     </p>
                     <div class="flex justify-between md:w-full">
