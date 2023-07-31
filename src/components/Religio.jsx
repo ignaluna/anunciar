@@ -111,17 +111,17 @@ const Religio = () => {
                             clickable: true,
                         }}
                         modules={[Pagination, Autoplay]}
-                        // autoplay={{
-                        //     delay: 5000,
-                        // }}
+                        autoplay={{
+                            delay: 5000,
+                        }}
                         className="w-full"
                     >
                         {data.map((item, index) => (
                             <SwiperSlide key={index}>
                                 <div className="p-4 w-full h-1/2">
-                                    <div className="h-full flex flex-row items-center justify-start text-center text-left bg-white bg-opacity-50 rounded-lg">
+                                    <div className="h-full flex flex-col items-center justify-start text-center text-left bg-white bg-opacity-50 rounded-lg">
                                         <Image
-                                            className="rounded-lg w-[200] h-[100] overflow-hidden object-cover"
+                                            className="rounded-lg w-[200px] h-[100px] overflow-hidden object-cover"
                                             src={item.img}
                                             width={4200}
                                             height={2100}
@@ -129,7 +129,7 @@ const Religio = () => {
                                         <div className="flex-grow sm:pl-8">
                                             <h2 className="title-font font-medium text-lg text-gray-900">{item.travel}</h2>
                                             <h3 className="text-gray-500 mb-3">UI Developer</h3>
-                                            <p className="hidden md:flex mb-4">{item.desc}</p>
+                                            <p className="mb-4">{item.desc}</p>
                                             <span className="inline-flex">
                                                 <a className="text-gray-500">
                                                     <svg
