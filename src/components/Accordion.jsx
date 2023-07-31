@@ -3,17 +3,17 @@ import React, { useState } from "react";
 
 const sectionsData = [
   {
-    title: "This is where you click to open",
+    title: "Cepla, Centro Ecumenico de Peregrinaciones LatinoAmericano",
     content:
-      "This is a very simple dropdown/accordion/collapse (whatever you call it) using Tailwind, Alpine.js, and the Alpine.js plugin 'Collapse' to enable smoother open/collapse transitions than what comes out of the box with Alpine.js",
+      "Cepla bla bla bla abla blablabalblabla",
   },
   {
-    title: "This is another section - 1",
+    title: "Panadería",
     content: "This is the content of section - 1",
   },
   {
-    title: "This is another section - 2",
-    content: "This is the content of section - 2",
+    title: "Suma tu proyecto!",
+    content: "Anunciar es un espacio de ayuda, crecimiento y creación, comunicate con nosotros y plantea tu proyecto",
   },
 ];
 

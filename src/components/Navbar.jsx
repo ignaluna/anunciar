@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect, useRef, useContext } from "react";
-import { arrowUpOutline, menuOutline } from "ionicons/icons";
+import { arrowUpOutline, menuOutline, volumeMuteOutline, volumeHighOutline } from "ionicons/icons";
 import { IonIcon } from "@ionic/react";
 import Image from "next/image";
 import { GlobalContext } from "../app/contexts/context";
@@ -14,6 +14,9 @@ const Navbar = () => {
   const [animateIn, setAnimateIn] = useState(false)
   const navbarRef = useRef(null);
   const [top, setTop] = useState(false);
+  const [audio, setAudio] = useState(false);
+  const audioRef = useRef(null);
+
 
 
   // Función para cambiar el valor de dropdown
@@ -68,6 +71,14 @@ const Navbar = () => {
     }
   };
 
+  const handleToggleAudio = () => {
+    setAudio(!audio);
+    if (audio) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play();
+    }
+  };
 
   return (
     <>
@@ -141,14 +152,15 @@ const Navbar = () => {
         </div>
         <div className="flex items-center gap-4">
           <button className="flex bg-[#a6c1ee] text-white px-5 py-2 rounded-full hover:bg-[#87acec]">Donar</button>
-          {/* <div
-            className={`text-3xl cursor-pointer ${dark ? "text-gray-700" : "text-yellow-400"} transition-colors`}
-            onClick={() => setDark(!dark)}
+          <audio ref={audioRef} src="/intro.mp3" loop />
+          <div
+            className={`text-3xl cursor-pointer ${audio ? "text-yellow-400" : "text-gray-700"} transition-colors`}
+            onClick={() => handleToggleAudio()}
           >
             <IonIcon
-              icon={dark ? moonOutline : sunnyOutline} // Asigna el ícono específico que deseas mostrar
+              icon={audio ? volumeHighOutline : volumeMuteOutline} // Asigna el ícono específico que deseas mostrar
             />
-          </div> */}
+          </div>
         </div>
       </nav>
       {dropdown && (

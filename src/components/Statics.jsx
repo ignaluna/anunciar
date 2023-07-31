@@ -7,10 +7,10 @@ import {
 import { IonIcon } from '@ionic/react';
 
 const data = [
-  { id: 1, count: "2.7K", text: "Peregrinaciones", icon: airplaneOutline, icon2: walkOutline },
-  { id: 2, count: "3.5K", text: "Social", icon: peopleOutline, icon2: personOutline },
-  { id: 3, count: "1.2K", text: "Comunicación", icon: playOutline, icon2: pauseOutline },
-  { id: 4, count: "3.5K", text: "Proyectos", icon: bulbOutline, icon2: buildOutline },
+  { id: 1, count: "+10K", text: "Peregrinos", icon: airplaneOutline, icon2: walkOutline },
+  { id: 2, count: "+500", text: "Personas", icon: peopleOutline, icon2: personOutline },
+  { id: 3, count: "+10K", text: "horas", icon: playOutline, icon2: pauseOutline },
+  { id: 4, count: "+20", text: "Proyectos", icon: bulbOutline, icon2: buildOutline },
   // Add more objects with different data for each div
 ];
 
