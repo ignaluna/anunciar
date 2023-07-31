@@ -89,16 +89,16 @@ const Statics = () => {
                 <IonIcon
                   onClick={() => handleIcon(index)}
                   icon={icon[index] ? item.icon2 : item.icon} // Asigna el ícono específico que deseas mostrar
-                  className={`text-indigo-500 w-12 h-12 mb-3 cursor-pointer inline-block ${hoverStates[index] ? "md:transform -translate-y-2 transition-transform duration-300" : "md:transform transition-transform duration-300"
+                  className={`text-indigo-500 w-12 h-12 mb-3 cursor-pointer inline-block ${hoverStates[index] ? "md:transform md:-translate-y-2 md:transition-transform duration-300" : "md:transform md:transition-transform md:duration-300"
                     }`} />
                 <h2
-                  className={`title-font font-medium text-3xl text-gray-900 w-full ${hoverStates[index] ? "md:transform scale-150 transition-transform duration-300" : "md:transform transition-transform duration-300"
+                  className={`title-font font-medium text-3xl text-gray-900 w-full ${hoverStates[index] ? "md:transform md:scale-150 md:transition-transform md:duration-300" : "md:transform md:transition-transform md:duration-300"
                     }`}
                 >
                   {item.count}
                 </h2>
                 <p
-                  className={`leading-relaxed ${hoverStates[index] ? "transform translate-y-2 transition-transform duration-300" : "transform transition-transform duration-300"
+                  className={`leading-relaxed ${hoverStates[index] ? "md:transform md:translate-y-2 md:transition-transform md:duration-300" : "md:transform md:transition-transform md:duration-300"
                     }`}
                 >
                   {item.text}

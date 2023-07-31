@@ -121,7 +121,7 @@ const Religio = () => {
                                 <div className="p-4 w-full h-1/2">
                                     <div className="h-full flex flex-col items-center justify-start text-center text-left bg-white bg-opacity-50 rounded-lg">
                                         <Image
-                                            className="rounded-lg w-[200px] h-[100px] overflow-hidden object-cover"
+                                            className="rounded-lg w-[200px] h-[200px] overflow-hidden object-cover"
                                             src={item.img}
                                             width={4200}
                                             height={2100}
