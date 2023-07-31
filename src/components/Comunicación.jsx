@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css';
 
 // import required modules
-import { Autoplay, Navigation, Pagination } from "swiper";
+import { Autoplay, Pagination } from "swiper";
 
 const data = ["sVIW38y5HjA", "gH-FnFNH4PA","W139JHx-yME", "d1ZqHp-8Jvg", "483Z9xrvTXQ"]
 

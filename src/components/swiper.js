@@ -43,19 +43,19 @@ export default function Slider() {
         </SwiperSlide> */}
         <SwiperSlide>
           <Image src="https://res.cloudinary.com/dvh8hozns/image/upload/v1690313565/WhatsApp_Image_2023-07-25_at_16.31.58_lhg64s.jpg"
-            height={720} width={1280} alt="Asociación Civil anunciar" />
+            height={720} width={1280} alt="Asociación Civil anunciar" className='h-[100vh]' />
         </SwiperSlide>
         <SwiperSlide>
           <Image src="https://res.cloudinary.com/dvh8hozns/image/upload/v1690315058/Dise%C3%B1o_sin_t%C3%ADtulo_17_shjhqz.png"
-            height={728} width={1640} alt="Asociación Civil anunciar" />
+            height={728} width={1640} alt="Asociación Civil anunciar" className='h-[100vh]' />
         </SwiperSlide>
         <SwiperSlide>
           <Image src="https://res.cloudinary.com/dvh8hozns/image/upload/v1690318846/Dise%C3%B1o_sin_t%C3%ADtulo_19_wefhds.png"
-            height={728} width={1640} alt="Asociación Civil anunciar" className='object-fill'/>
+            height={728} width={1640} alt="Asociación Civil anunciar" className='h-[100vh]'/>
         </SwiperSlide>
         <SwiperSlide>
           <Image src="https://res.cloudinary.com/dvh8hozns/image/upload/v1690318331/Dise%C3%B1o_sin_t%C3%ADtulo_18_pgpzlf.png"
-            height={1600} width={1200} alt="Asociación Civil anunciar" className='object-fill'/>
+            height={1600} width={1200} alt="Asociación Civil anunciar" className='h-[100vh]'/>
         </SwiperSlide>
       </Swiper>
     </div>
