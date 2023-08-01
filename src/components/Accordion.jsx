@@ -3,17 +3,17 @@ import React, { useState } from "react";
 
 const sectionsData = [
   {
-    title: "Cepla, Centro Ecumenico de Peregrinaciones LatinoAmericano",
+    title: "Cepla",
     content:
-      "Cepla bla bla bla abla blablabalblabla",
+      "Primer Centro Ecuménico de Peregrinaciones Latinoamericano, con más de 30 países integrantes.A través de viajes y peregrinaciones, buscan contribuir al fortalecimiento espiritual y la conexión entre personas en América Latina.",
   },
   {
-    title: "Panadería",
-    content: "This is the content of section - 1",
+    title: "Mujeres en marcha",
+    content: "Espacio cooperativo de trabajo para mujeres en el desarrollo de una panadería",
   },
   {
-    title: "Suma tu proyecto!",
-    content: "Anunciar es un espacio de ayuda, crecimiento y creación, comunicate con nosotros y plantea tu proyecto",
+    title: "Keller Cultural",
+    content: "Keller es un espacio que forma parte del proyecto cultural de la Asociación Civil Anunciar, enfocado en generar un impacto social a través del desarrollo artístico y la promoción de valores culturales.",
   },
 ];
 

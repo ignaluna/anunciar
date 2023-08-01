@@ -54,6 +54,10 @@ export default function Slider() {
             height={728} width={1640} alt="Asociación Civil anunciar" className='h-[100vh]'/>
         </SwiperSlide>
         <SwiperSlide>
+          <Image src="https://res.cloudinary.com/dvh8hozns/image/upload/v1690315966/WhatsApp_Image_2023-07-25_at_17.00.35_su0ge2.jpg"
+            height={1600} width={1200} alt="Asociación Civil anunciar" className='h-[100vh]'/>
+        </SwiperSlide>
+        <SwiperSlide className='hidden'>
           <Image src="https://res.cloudinary.com/dvh8hozns/image/upload/v1690318331/Dise%C3%B1o_sin_t%C3%ADtulo_18_pgpzlf.png"
             height={1600} width={1200} alt="Asociación Civil anunciar" className='h-[100vh]'/>
         </SwiperSlide>

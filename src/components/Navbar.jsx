@@ -151,7 +151,9 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex items-center gap-4">
+          <Link target="_blank" href={"https://wa.link/4ffj0q"}>
           <button className="md:flex hidden bg-[#a6c1ee] text-white px-5 py-2 rounded-full hover:bg-[#87acec]">Donar</button>
+          </Link>
           <audio ref={audioRef} src="/intro.mp3" loop />
           <div
             className={`text-3xl cursor-pointer ${audio ? "text-yellow-400" : "text-gray-700"} transition-colors`}

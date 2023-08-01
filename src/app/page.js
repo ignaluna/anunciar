@@ -14,7 +14,7 @@ export default function Home() {
       <div className="sticky top-0 h-screen flex flex-col items-center justify-center">
         <Slider />
       </div>
-      <div className="sticky top-1 h-screen bg-[#F1F1F1]  flex flex-col items-center 
+      <div className="sticky top-1 h-auto bg-[#F1F1F1] py-5  flex flex-col items-center 
       justify-center text-white">
         <Statics />
       </div>
@@ -22,7 +22,7 @@ export default function Home() {
       flex-col items-center justify-center">
         <Jaire />
       </div>
-      <div id="comunicacion" className="sticky top-0 h-screen bg-[#F1F1F1] 
+      <div id="comunicacion" className="sticky top-0 p-10 bg-[#F1F1F1] 
       flex flex-col items-center justify-center">
         <Comunicación/>
       </div>

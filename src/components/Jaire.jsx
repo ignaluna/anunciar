@@ -12,16 +12,16 @@ const Jaire = () => {
                             alt="Logo"
                             height={371}
                             width={371}
-                            className="w-40 h-40 mb-4 duration-300 hover:scale-150"
+                            className="w-40 h-40 duration-300 hover:scale-150"
                         />
                         </div>
                     <p class="mb-8 leading-relaxed">
-                        Nuestra misión es la promoción humana y social de niñ@s, adolescentes y jóvenes. Jaire significa Alégrate. Frente a la realidad de vulnerabilidad social
-                        del sector, Jaire intenta ser un espacio de encuentro y alegría desde la educación, cultura, recreación y deporte. Talleres gratuitos semanales
+                    El Centro Jaire protege y promueve los derechos de personas en Villa Bustos y barrios cercanos, abordando problemáticas sociales como embarazo adolescente, deserción escolar, precariedad laboral, consumo problemático y violencia de género. Es un espacio inclusivo y de encuentro que busca fortalecer la autoestima y autonomía, brindando oportunidades de desarrollo integral. Su proyecto se enfoca en crear un espacio 
+                    cooperativo, ofreciendo oportunidades laborales e independencia económica, mientras sostiene las actividades para los niños del centro.
                     </p>
                     <div class="flex justify-between md:w-full">
-                        <Link target="_blank" className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" href="https://wa.link/63apvp" >Voluntarios</Link>
-                        <Link className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg" href="https://wa.link/1veeyn">Donar</Link>
+                        <Link target="_blank" className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" href="https://chat.whatsapp.com/ILnDdLLoAz87Xr3xoEunvG" >Voluntarios</Link>
+                        <Link className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg" href="https://wa.link/4ffj0q">Donar</Link>
                     </div>
                 </div>
                 <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">

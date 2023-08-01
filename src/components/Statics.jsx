@@ -70,12 +70,12 @@ const Statics = () => {
             Asociación Civil Anunciar
           </h1>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-            Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway
-            tile poke farm-to-table. Franzen you probably havent heard of them man bun
-            deep jianbing selfies heirloom prism food truck ugh squid celiac humblebrag.
+          Entidad sin fines de lucro tiene como objetivo mejorar la calidad de vida de los 
+          ciudadanos a través de actividades que incluyen la difusión del evangelio y 
+          fortalecer principios y valores comunitarios.
           </p>
         </div>
-        <div className="flex flex-wrap -m-4 text-center">
+        <div className="flex flex-wrap text-center">
           {data.map((item, index) => (
             <div
               key={item.id}
