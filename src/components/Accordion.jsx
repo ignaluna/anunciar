@@ -13,7 +13,7 @@ const sectionsData = [
   },
   {
     title: "Keller Cultural",
-    content: "Keller es un espacio que forma parte del proyecto cultural de la Asociación Civil Anunciar, enfocado en generar un impacto social a través del desarrollo artístico y la promoción de valores culturales.",
+    content: "Keller fue un espacio que forma parte del proyecto cultural de la Asociación Civil Anunciar, enfocado en generar un impacto social a través del desarrollo artístico y la promoción de valores culturales.",
   },
 ];
 

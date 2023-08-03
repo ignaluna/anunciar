@@ -1,11 +1,12 @@
 "use client"
 import { useState, useEffect, useRef, useContext } from "react";
-import { arrowUpOutline, menuOutline, volumeMuteOutline, volumeHighOutline } from "ionicons/icons";
+import { arrowUpOutline, menuOutline, volumeMuteOutline, volumeHighOutline, arrowBack } from "ionicons/icons";
 import { IonIcon } from "@ionic/react";
 import Image from "next/image";
 import { GlobalContext } from "../app/contexts/context";
 import Link from "next/link";
-import { Link as LinkScroll } from "react-scroll";
+import { usePathname } from "next/navigation";
+
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -16,7 +17,7 @@ const Navbar = () => {
   const [top, setTop] = useState(false);
   const [audio, setAudio] = useState(false);
   const audioRef = useRef(null);
-
+  const pathname = usePathname()
 
 
   // Función para cambiar el valor de dropdown
@@ -33,10 +34,12 @@ const Navbar = () => {
 
     window.addEventListener("scroll", handleScroll);
 
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
-    }
-  }, []);
+
+    };
+  }, [pathname]);
 
   const toggleDropdown = (to) => {
     if (dropdown) {
@@ -80,6 +83,7 @@ const Navbar = () => {
     }
   };
 
+
   return (
     <>
       <nav
@@ -87,12 +91,24 @@ const Navbar = () => {
         className={`navbar flex items-center justify-between px-12 fixed top-0 left-0 w-full z-40 bg-[#F1F1F1] shadow 
       transition-all duration-300 ${dropdown || !scrolled ? "h-[20vh]" : "h-14"}`}
       >
-        <IonIcon
-          onClick={toggleDropdown} // Asegúrate de utilizar la sintaxis de eventos de React
-          icon={menuOutline} // Asigna el ícono específico que deseas mostrar
-          className="text-3xl cursor-pointer md:hidden h-lg"
-        />
-        <Link href="/" className={`logo transition-all duration-700 flex items-center ${dropdown || !scrolled ? "scale-150" : "scale-75"}`} id="logo">
+        {pathname === "/" && (
+          <IonIcon
+            onClick={toggleDropdown} // Asegúrate de utilizar la sintaxis de eventos de React
+            icon={menuOutline} // Asigna el ícono específico que deseas mostrar
+            className="text-3xl cursor-pointer md:hidden h-lg"
+          />
+        )}
+        {pathname !== "/" && (
+          <Link href="/"
+          >
+            <IonIcon
+              icon={arrowBack} // Asigna el ícono específico que deseas mostrar
+              className="text-3xl cursor-pointer text-gray-700"
+            />
+          </Link>
+        )}
+
+        <Link href="/" className={`logo transition-all duration-700 flex items-center ${dropdown || !scrolled ? "scale-150" : "scale-75"} ${ pathname !== "/" ? "md:ml-28" : ""}`} id="logo">
           <Image
             src="https://res.cloudinary.com/dvh8hozns/image/upload/v1688157403/Anunciar/qpi5qareodaxmmehor3u.png"
             alt="Logo"
@@ -101,58 +117,62 @@ const Navbar = () => {
 
           />
         </Link>
-        <div className="nav-links duration-500 min-h-fit flex items-center px-5 hidden md:flex">
-          <ul className="hidden md:flex flex-row items-center gap-[4vw]">
-            <li>
-              <button
-                onClick={() => {
-                  scrollToSection("#jaire");
-                }
-                }
-                className="hover:text-gray-500 cursor-pointer"
-              >
-                Social
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => {
-                  scrollToSection("#comunicacion");
-                }
-                }
-                className="hover:text-gray-500 cursor-pointer"
-              >
-                Comunicación
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => {
-                  scrollToSection("#religio");
-                }
-                }
-                className="hover:text-gray-500 cursor-pointer"
-              >
-                Peregrinaciones
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => {
-                  scrollToSection("#accordion");
-                }
-                }
-                className="hover:text-gray-500 cursor-pointer"
-              >
-                Proyectos
-              </button>
-            </li>
+        {pathname === "/" && (
 
-          </ul>
-        </div>
+          < div className="nav-links duration-500 min-h-fit flex items-center px-5 hidden md:flex">
+            <ul className="hidden md:flex flex-row items-center gap-[4vw]">
+              <li>
+                <button
+                  onClick={() => {
+                    scrollToSection("#jaire");
+                  }
+                  }
+                  className="hover:text-gray-500 cursor-pointer"
+                >
+                  Social
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    scrollToSection("#comunicacion");
+                  }
+                  }
+                  className="hover:text-gray-500 cursor-pointer"
+                >
+                  Comunicación
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    scrollToSection("#religio");
+                  }
+                  }
+                  className="hover:text-gray-500 cursor-pointer"
+                >
+                  Peregrinaciones
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    scrollToSection("#accordion");
+                  }
+                  }
+                  className="hover:text-gray-500 cursor-pointer"
+                >
+                  Proyectos
+                </button>
+              </li>
+
+            </ul>
+          </div>
+        )
+        }
         <div className="flex items-center gap-4">
           <Link target="_blank" href={"https://wa.link/4ffj0q"}>
-          <button className="md:flex hidden bg-[#a6c1ee] text-white px-5 py-2 rounded-full hover:bg-[#87acec]">Donar</button>
+            <button className="md:flex hidden bg-[#a6c1ee] text-white px-5 py-2 rounded-full hover:bg-[#87acec]">Donar</button>
           </Link>
           <audio ref={audioRef} src="/intro.mp3" loop />
           <div
@@ -164,7 +184,7 @@ const Navbar = () => {
             />
           </div>
         </div>
-      </nav>
+      </nav >
       {dropdown && (
         <>
           <div
@@ -198,16 +218,19 @@ const Navbar = () => {
             </ul>
           </div>
         </>
-      )}
-      {top && (
-        <Link
-          className="back-to-top bg-black-800 rounded-full w-12 h-12 flex items-center justify-center fixed bottom-8 right-8 cursor-pointer z-index-40"
-          href="/"
-          onClick={() => setTop(false)}
-        >
-          <IonIcon icon={arrowUpOutline} className="text-white" />
-        </Link>
-      )}
+      )
+      }
+      {
+        top && (
+          <Link
+            className="back-to-top bg-black-800 rounded-full w-12 h-12 flex items-center justify-center fixed bottom-8 right-8 cursor-pointer z-index-40"
+            href="/"
+            onClick={() => setTop(false)}
+          >
+            <IonIcon icon={arrowUpOutline} className="text-white" />
+          </Link>
+        )
+      }
     </>
   );
 };

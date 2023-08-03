@@ -36,11 +36,6 @@ export default function Slider() {
         autoplay={true}
         className=""
       >
-        {/* <SwiperSlide>
-
-          <Image src="https://res.cloudinary.com/dvh8hozns/image/upload/v1690311576/tierra-santa_vzxh7z.jpg"
-            height={2100} width={4200} alt="Asociación Civil anunciar" />
-        </SwiperSlide> */}
         <SwiperSlide>
           <Image src="https://res.cloudinary.com/dvh8hozns/image/upload/v1690313565/WhatsApp_Image_2023-07-25_at_16.31.58_lhg64s.jpg"
             height={720} width={1280} alt="Asociación Civil anunciar" className='h-[100vh]' />

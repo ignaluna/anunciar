@@ -46,7 +46,6 @@ const Religio = () => {
                         Con más de 28 años de experiencia, han trabajado con más de 10 mil peregrinos, destacándose por su enfoque pastoral.
                     </p>
                 </div>
-
                 <div className="hidden lg:flex flex-wrap -m-4">
                     {data.map((item, index) => (
                         <div key={index} className="p-4 lg:w-1/2">
