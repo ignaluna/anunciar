@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useEffect } from 'react';
 
 
-const jaire = () => {
+const Jaire = () => {
 
     useEffect(() => {
         const handleScroll = () => {
@@ -72,4 +72,4 @@ const jaire = () => {
     );
 };
 
-export default jaire;
+export default Jaire;
