@@ -7,8 +7,6 @@ import { useEffect, useState } from 'react';
 
 
 const jaire = () => {
-    const [isHovered, setIsHovered] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {

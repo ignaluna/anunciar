@@ -106,6 +106,7 @@ const Religio = () => {
                                             src={item.img}
                                             width={4200}
                                             height={2100}
+                                            alt={"peregrinaciones religiosas"}
                                         />
                                         <div className="flex-grow sm:pl-8">
                                             <h2 className="title-font font-medium text-lg text-gray-900">{item.travel}</h2>
