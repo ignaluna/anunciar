@@ -3,7 +3,7 @@ import { IonIcon } from '@ionic/react';
 import { chatbubbleEllipsesOutline, logoFacebook, logoInstagram } from 'ionicons/icons';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 
 const jaire = () => {
