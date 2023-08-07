@@ -11,7 +11,7 @@ import { usePathname } from "next/navigation";
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const { globalState, setGlobalState } = useContext(GlobalContext);
-  const { dropdown, navBarHeight } = globalState;
+  const { dropdown } = globalState;
   const [animateIn, setAnimateIn] = useState(false)
   const navbarRef = useRef(null);
   const [top, setTop] = useState(false);

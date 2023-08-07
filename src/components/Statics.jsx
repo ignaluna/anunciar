@@ -7,10 +7,10 @@ import {
 import { IonIcon } from '@ionic/react';
 
 const data = [
-  { id: 1, area: "Social", count: "+10K", text: "Peregrinos", icon: airplaneOutline, icon2: walkOutline },
+  { id: 1, area: "Peregrinaciones", count: "+10K", text: "Peregrinos", icon: airplaneOutline, icon2: walkOutline },
   { id: 2, area: "Social", count: "+500", text: "Personas", icon: peopleOutline, icon2: personOutline },
-  { id: 3, area: "Social", count: "+10K", text: "horas de tv", icon: playOutline, icon2: pauseOutline },
-  { id: 4, area: "Social", count: "+20", text: "Proyectos", icon: bulbOutline, icon2: buildOutline },
+  { id: 3, area: "Comunicación", count: "+10K", text: "horas de tv", icon: playOutline, icon2: pauseOutline },
+  { id: 4, area: "Proyectos", count: "+20", text: "Proyectos", icon: bulbOutline, icon2: buildOutline },
   // Add more objects with different data for each div
 ];
 
@@ -65,7 +65,7 @@ const Statics = () => {
   return (
     <section className="text-gray-600 body-font transition-transform duration-300 p-4" id="statics">
       <div className="container sm:px-5 sm:py-24 mx-auto">
-        <div className="flex flex-col text-center w-full mb-5 sm:mb-20">
+        <div className="flex flex-col text-center w-full mb-3 sm:mb-20">
           <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
             Asociación Civil Anunciar
           </h1>
@@ -83,6 +83,7 @@ const Statics = () => {
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={() => handleMouseLeave(index)}
             >
+              <h2 className="mb-3 font-bold title-font">{item.area}</h2>
               <div
                 className={`border-2 border-gray-200 px-4 py-2 md:py-6 rounded-lg`}
               >

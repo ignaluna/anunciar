@@ -47,4 +47,4 @@ const Jaire = () => {
     )
 }
 
-export default Jaire
+export default Jaire;

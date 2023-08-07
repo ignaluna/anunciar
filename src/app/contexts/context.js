@@ -6,7 +6,6 @@ const GlobalContext = createContext();
 const MyGlobalContext = ({ children }) => {
     const [globalState, setGlobalState] = useState({
         dropdown: false,
-        opacity: false,
       });
     
 
