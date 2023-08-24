@@ -2,7 +2,6 @@
 import Statics from "@/components/Statics";
 import Slider from "../components/Slider";
 import Jaire from "@/components/Jaire";
-import Footer from "@/components/Footer";
 import Religio from "@/components/Religio";
 import Accordion from "@/components/Accordion";
 import Comunicación from "@/components/Comunicación";
@@ -12,10 +11,10 @@ import SliderSmall from "@/components/SliderSmall";
 export default function Home() {
   return (
     <div className={`flex flex-col min-h-screen w-screen`}>
-      <div className="hidden sticky top-0 h-screen lg:flex flex-col items-center justify-center z-index-10">
+      <div id="Anunciar Fotos" className="hidden sticky top-0 h-screen lg:flex flex-col items-center justify-center z-index-10">
         <Slider />
       </div>
-      <div className="flex sticky top-0 h-screen lg:hidden flex-col items-center justify-center z-index-10">
+      <div id="Anunciar Fotos celular" className="flex sticky top-0 h-screen lg:hidden flex-col items-center justify-center z-index-10">
         <SliderSmall />
       </div>
       

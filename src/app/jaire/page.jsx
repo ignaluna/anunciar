@@ -27,6 +27,7 @@ const JairePage = () => {
                     <div
                         className={`relative flex flex-col items-center rounded-lg w-full mx-auto`}
                     >
+                        {/* Imagen de talleres */}
                         <div className={`flex w-full justify-center rounded-xl bg-cover`}>
                             <Image
                                 width={400}
@@ -36,16 +37,18 @@ const JairePage = () => {
                                 src="https://res.cloudinary.com/dvh8hozns/image/upload/v1690998124/WhatsApp_Image_2023-08-01_at_19.00.34_ubbdhy.jpg"
                             />
                         </div>
+                        {/* Logo */}
                         <div className=" flex h-[87px] w-[87px] items-center justify-center rounded-full border-[4px] border-white bg-pink-400 dark:!border-navy-700">
                             <Image
                                 height={371}
                                 width={371}
                                 className="h-full w-full rounded-full"
                                 src="https://res.cloudinary.com/dvh8hozns/image/upload/v1690737624/descarga-removebg-preview_3_1_haajts.png"
-                                alt=""
+                                alt="Jaire Logo"
                             />
                         </div>
                     </div>
+                    {/* Botones de contacto */}
                     <div className="flex flex-col items-center">
                         <h4 className="text-xl font-bold text-navy-700 dark:text-white">Jaire</h4>
                         <p className="text-base font-normal text-gray-600">Ancasti 5750</p>
