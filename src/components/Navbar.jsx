@@ -124,6 +124,17 @@ const Navbar = () => {
               <li>
                 <button
                   onClick={() => {
+                    scrollToSection("#religio");
+                  }
+                  }
+                  className="hover:text-gray-500 cursor-pointer"
+                >
+                  Centro de Peregrinaciones
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
                     scrollToSection("#jaire");
                   }
                   }
@@ -141,17 +152,6 @@ const Navbar = () => {
                   className="hover:text-gray-500 cursor-pointer"
                 >
                   Comunicación
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => {
-                    scrollToSection("#religio");
-                  }
-                  }
-                  className="hover:text-gray-500 cursor-pointer"
-                >
-                  Centro de Peregrinaciones
                 </button>
               </li>
               <li>

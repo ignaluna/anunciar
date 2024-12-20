@@ -37,11 +37,10 @@ export default function Slider() {
         autoplay={true}
         className=""
       >
-        {/* Jaire */}
-        <SwiperSlide >
+            <SwiperSlide>
           <Image src=
-            "https://res.cloudinary.com/dvh8hozns/image/upload/v1690313565/WhatsApp_Image_2023-07-25_at_16.31.58_lhg64s.jpg"
-            height={396} width={720} alt="Asociación Civil anunciar" />
+            "https://res.cloudinary.com/dvh8hozns/image/upload/v1690919240/WhatsApp_Image_2023-07-25_at_17.09.13_5_xnmk8f.jpg"
+            height={1600} width={1200} alt="Asociación Civil anunciar"  />
         </SwiperSlide>
         {/* Religio */}
         <SwiperSlide>
@@ -54,19 +53,20 @@ export default function Slider() {
           <Image src="https://res.cloudinary.com/dvh8hozns/image/upload/v1690318846/Dise%C3%B1o_sin_t%C3%ADtulo_19_wefhds.png"
             height={728} width={1640} alt="Asociación Civil anunciar" />
         </SwiperSlide>
-        {/*nene*/}
+        {/*Fatima*/}
         <SwiperSlide>
-          <Image src="https://res.cloudinary.com/dvh8hozns/image/upload/v1690315966/WhatsApp_Image_2023-07-25_at_17.00.35_su0ge2.jpg"
+          <Image src="https://res.cloudinary.com/dvh8hozns/image/upload/v1690314465/WhatsApp_Image_2023-07-25_at_16.46.57_opokba.jpg"
             height={1600} width={1200} alt="Asociación Civil anunciar" className='object-contain'  />
         </SwiperSlide>
         <SwiperSlide>
-          <Image src="https://res.cloudinary.com/dvh8hozns/image/upload/v1690318331/Dise%C3%B1o_sin_t%C3%ADtulo_18_pgpzlf.png"
+          <Image src="https://res.cloudinary.com/dvh8hozns/image/upload/v1690315058/Dise%C3%B1o_sin_t%C3%ADtulo_17_shjhqz.png"
             height={1600} width={1200} alt="Asociación Civil anunciar" />
         </SwiperSlide>
-        <SwiperSlide>
+        {/* Jaire */}
+        <SwiperSlide >
           <Image src=
-            "https://res.cloudinary.com/dvh8hozns/image/upload/v1690919240/WhatsApp_Image_2023-07-25_at_17.09.13_5_xnmk8f.jpg"
-            height={1600} width={1200} alt="Asociación Civil anunciar"  />
+            "https://res.cloudinary.com/dvh8hozns/image/upload/v1690313565/WhatsApp_Image_2023-07-25_at_16.31.58_lhg64s.jpg"
+            height={396} width={720} alt="Asociación Civil anunciar" />
         </SwiperSlide>
       </Swiper>
     </div>
