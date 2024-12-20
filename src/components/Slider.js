@@ -62,10 +62,9 @@ export default function Slider() {
           <Image src="https://res.cloudinary.com/dvh8hozns/image/upload/v1690315058/Dise%C3%B1o_sin_t%C3%ADtulo_17_shjhqz.png"
             height={1600} width={1200} alt="Asociación Civil anunciar" />
         </SwiperSlide>
-        {/* Jaire */}
         <SwiperSlide >
           <Image src=
-            "https://res.cloudinary.com/dvh8hozns/image/upload/v1690313565/WhatsApp_Image_2023-07-25_at_16.31.58_lhg64s.jpg"
+            "https://res.cloudinary.com/dvh8hozns/image/upload/v1734662440/Anunciar/leofes8yziuzmeypwdxb.jpg"
             height={396} width={720} alt="Asociación Civil anunciar" />
         </SwiperSlide>
       </Swiper>
