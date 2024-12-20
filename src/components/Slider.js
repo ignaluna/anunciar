@@ -42,6 +42,11 @@ export default function Slider() {
             "https://res.cloudinary.com/dvh8hozns/image/upload/v1690919240/WhatsApp_Image_2023-07-25_at_17.09.13_5_xnmk8f.jpg"
             height={1600} width={1200} alt="Asociación Civil anunciar"  />
         </SwiperSlide>
+        <SwiperSlide>
+          <Image src=
+            "https://res.cloudinary.com/dvh8hozns/image/upload/v1734668334/Anunciar/x5yyfqliz6cjqesl61p8.jpg"
+            height={1600} width={1200} alt="Asociación Civil anunciar" className='h-[100vh] object-contain' />
+        </SwiperSlide>
         {/* Religio */}
         <SwiperSlide>
           <Image src=
