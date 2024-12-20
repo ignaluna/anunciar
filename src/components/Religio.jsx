@@ -2,16 +2,16 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css';
 import { Autoplay, Pagination } from "swiper";
+import Link from "next/link";
 import { IonIcon } from "@ionic/react";
 import { chatbubbleEllipsesOutline, logoFacebook, logoInstagram } from "ionicons/icons";
-import { Link } from "react-scroll";
 
 const data = [
     {
         travel: "Jubileo de los Jóvenes y Camino de Santiago",
         img: "https://res.cloudinary.com/dvh8hozns/image/upload/v1734660435/Anunciar/n13qn1mzawfctnvsnnyg.png",
         fecha: "Julio 2025",
-        desc: "Peregrinación, trekking y palabra. Acompaña Padre Martin Nacusi",
+        desc: "Acompaña Padre Martin Nacusi",
     },
     {
         travel: "Santuarios Marianos Europeos - Roma",
@@ -23,7 +23,7 @@ const data = [
         travel: "Santuarios Marianos Europeos - Portugal",
         img: "https://res.cloudinary.com/dvh8hozns/image/upload/v1734660115/Anunciar/rulhwb7wxprpsqxtd1dq.png",
         fecha: "Marzo-Abril 2025",
-        desc: "Portugal, España, Francia, Medjugorje. Opcional Roma. Acompaña Padre Roberto Galleano",
+        desc: " Acompaña Padre Roberto Galleano",
     },
     {
         travel: "Jubileo de las Familias",
@@ -61,7 +61,7 @@ const Religio = () => {
                                     <h2 className="title-font font-medium text-lg text-gray-700">{item.travel}</h2>
                                     <h3 className="text-gray-500 mb-3">{item.fecha}</h3>
                                     <p className="md:flex text-gray-900 mb-4">{item.desc}</p>
-                                    {/* <span className="inline-flex text-gray-700 gap-4">
+                                    <span className="inline-flex text-gray-700 gap-4">
                                         <Link target="_blank" href="https://www.instagram.com/religioperegrinaciones/">
                                             <IonIcon
                                                 className="w-8 h-8"
@@ -76,7 +76,7 @@ const Religio = () => {
                                                 className="w-8 h-8"
                                                 icon={chatbubbleEllipsesOutline} />
                                         </Link>
-                                    </span> */}
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -99,7 +99,7 @@ const Religio = () => {
                         {data.map((item, index) => (
                             <SwiperSlide key={index}>
                                 <div className="p-4 w-full h-1/2">
-                                    <div className="h-full flex flex-col items-center justify-start text-center text-left bg-white bg-opacity-50 rounded-lg">
+                                    <div className="h-full flex flex-col items-center justify-start  text-left bg-white bg-opacity-50 rounded-lg">
                                         <Image
                                             className="rounded-lg w-[200px] h-[200px] overflow-hidden object-cover"
                                             src={item.img}
