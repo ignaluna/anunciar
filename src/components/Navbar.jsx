@@ -151,7 +151,7 @@ const Navbar = () => {
                   }
                   className="hover:text-gray-500 cursor-pointer"
                 >
-                  Peregrinaciones
+                  Centro de Peregrinaciones
                 </button>
               </li>
               <li>

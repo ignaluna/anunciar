@@ -8,28 +8,28 @@ import { Link } from "react-scroll";
 
 const data = [
     {
-        travel: "Santuarios Marianos",
-        img: "https://res.cloudinary.com/dvh8hozns/image/upload/v1690918035/Poster_A4_Religio_002_cc4ykr.png",
-        fecha: "13 de Octubre",
-        desc: "Acompaña Monseñor Frassia",
+        travel: "Jubileo de los Jóvenes y Camino de Santiago",
+        img: "https://res.cloudinary.com/dvh8hozns/image/upload/v1734660435/Anunciar/n13qn1mzawfctnvsnnyg.png",
+        fecha: "Julio 2025",
+        desc: "Peregrinación, trekking y palabra. Acompaña Padre Martin Nacusi",
     },
     {
-        travel: "Tierra Santa y Jordania",
-        img: "https://res.cloudinary.com/dvh8hozns/image/upload/v1690918032/Tierra_SANTA_jORDANIA_Y_pETRA_4_moijfi.png",
-        fecha: "Diciembre 2023",
-        desc: "Acompaña Padre David Ochoa",
-    },
-    {
-        travel: "Individuales y grupales",
-        img: "https://res.cloudinary.com/dvh8hozns/image/upload/v1690920143/Portada_para_facebook_viaj%C3%A1_con_previaje_monta%C3%B1a_paisaje_con_foto_1_yegmrv.png",
-        fecha: "Todo el año",
-        desc: "Viví la experiencia de peregrinar con tu comunidad.",
-    },
-    {
-        travel: "Tierra Santa y Jordania",
-        img: "https://res.cloudinary.com/dvh8hozns/image/upload/v1690918256/Tierra_SANTA_jORDANIA_Y_pETRA_5_r0xkzq.png",
-        fecha: "Abril 2023",
+        travel: "Santuarios Marianos Europeos - Roma",
+        img: "https://res.cloudinary.com/dvh8hozns/image/upload/v1734659980/Anunciar/asc3lchf8t60beko66uf.png",
+        fecha: "Abril 2025",
         desc: "Acompaña Padre Mario Sanchez",
+    },
+    {
+        travel: "Santuarios Marianos Europeos - Portugal",
+        img: "https://res.cloudinary.com/dvh8hozns/image/upload/v1734660115/Anunciar/rulhwb7wxprpsqxtd1dq.png",
+        fecha: "Marzo-Abril 2025",
+        desc: "Portugal, España, Francia, Medjugorje. Opcional Roma. Acompaña Padre Roberto Galleano",
+    },
+    {
+        travel: "Jubileo de las Familias",
+        img: "https://res.cloudinary.com/dvh8hozns/image/upload/v1734660290/Anunciar/tpdrutyuqrctzgk3vpi6.png",
+        fecha: "Mayo 2025",
+        desc: "Acompaña Padre Walter Posca",
     },
 ];
 
@@ -39,12 +39,11 @@ const Religio = () => {
         <section class="text-gray-400 bg-gradient-to-t body-font rounded-lg">
             <div class="container w-screen p-5">
                 <div class="flex flex-col lg:flex-row text-center w-full items-center justify-center mb-7 lg:space-y-0 lg:mt-0 mt-5">
-                    <Image className="object-cover object-center"
+                    {/* <Image className="object-cover object-center"
                         src={"https://res.cloudinary.com/dvh8hozns/image/upload/v1690759753/Religio_Negro_PNG_3_f7kv7r.png"}
-                        width={125} height={60} />
-                    <p class=" leading-relaxed text-black">Religio es una agencia de viajes experta en turismo religioso y peregrinaciones
-                        Con más de 28 años de experiencia, han trabajado con más de 10 mil peregrinos, destacándose por su enfoque pastoral.
-                    </p>
+                        width={125} height={60} /> */}
+                    <h2 class=" leading-relaxed text-2x1 text-black font-bold w-full text-center text-[40px]">Centro de Peregrinaciones Anunciar</h2>
+
                 </div>
                 <div className="hidden lg:flex flex-wrap -m-4">
                     {data.map((item, index) => (
@@ -62,7 +61,7 @@ const Religio = () => {
                                     <h2 className="title-font font-medium text-lg text-gray-700">{item.travel}</h2>
                                     <h3 className="text-gray-500 mb-3">{item.fecha}</h3>
                                     <p className="md:flex text-gray-900 mb-4">{item.desc}</p>
-                                    <span className="inline-flex text-gray-700 gap-4">
+                                    {/* <span className="inline-flex text-gray-700 gap-4">
                                         <Link target="_blank" href="https://www.instagram.com/religioperegrinaciones/">
                                             <IonIcon
                                                 className="w-8 h-8"
@@ -77,7 +76,7 @@ const Religio = () => {
                                                 className="w-8 h-8"
                                                 icon={chatbubbleEllipsesOutline} />
                                         </Link>
-                                    </span>
+                                    </span> */}
                                 </div>
                             </div>
                         </div>
